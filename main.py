@@ -18,19 +18,22 @@ class WhatsappBot:
 
     def EnviarMensagens(self):
         self.driver.get('https://web.whatsapp.com/')
-        time.sleep(30)
+        time.sleep(10)
         for grupo in self.grupos:
             grupo_element = self.driver.find_element(By.XPATH, f"//span[@title='{grupo}']")
             time.sleep(3)
             grupo_element.click()
-            chat_box = self.driver.find_element(By.CLASS_NAME, '_3uMse')
-            time.sleep(3)
+            chat_box = self.driver.find_element(By.CLASS_NAME, '_3Uu1_')
+            time.sleep(1)
             chat_box.click()
             chat_box.send_keys(self.mensagem)
             botao_enviar = self.driver.find_element(By.XPATH, "//span[@data-icon='send']")
-            time.sleep(5)
+            time.sleep(1)
             botao_enviar.click()
-            time.sleep(5)
+            time.sleep(1)
 
 bot = WhatsappBot()
 bot.EnviarMensagens()
+bot.EnviarMensagens()
+bot.EnviarMensagens()
+
